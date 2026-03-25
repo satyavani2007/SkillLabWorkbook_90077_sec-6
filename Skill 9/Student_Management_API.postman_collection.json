@@ -1,0 +1,153 @@
+{
+  "info": {
+    "name": "Student Management System API",
+    "description": "Collection for testing Student Management System API with Global Exception Handling",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Student - Valid ID (200)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/students/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "students", "1"]
+        },
+        "description": "Get student with ID 1 - Success case"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Student - ID 2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/students/2",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "students", "2"]
+        },
+        "description": "Get student with ID 2 - Rahul"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Student - ID 3",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/students/3",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "students", "3"]
+        },
+        "description": "Get student with ID 3 - Priya"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Student - Not Found (404)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/students/5",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "students", "5"]
+        },
+        "description": "Get student with ID 5 - StudentNotFoundException (404)"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Student - Invalid Input Text (400)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/students/abc",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "students", "abc"]
+        },
+        "description": "Get student with text ID - InvalidInputException (400)"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Student - Invalid Input Negative (400)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/students/-5",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "students", "-5"]
+        },
+        "description": "Get student with negative ID - InvalidInputException (400)"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Student - Invalid Input XYZ (400)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/students/xyz",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "students", "xyz"]
+        },
+        "description": "Get student with text ID xyz - InvalidInputException (400)"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Student - Large ID Not Found (404)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/students/999",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "students", "999"]
+        },
+        "description": "Get student with ID 999 - StudentNotFoundException (404)"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Student - Invalid Input Zero (400)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/students/0",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "students", "0"]
+        },
+        "description": "Get student with ID 0 - InvalidInputException (400)"
+      },
+      "response": []
+    }
+  ]
+}
